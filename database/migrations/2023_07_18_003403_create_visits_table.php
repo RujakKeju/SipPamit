@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('visit', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('alamat')->nullable();
-            $table->string('contact_phone');
-            $table->string('profile_photo_path', 2048)->nullable();
-            $table->string('descript')->nullable();
-            $table->rememberToken();
+            $table->boolean('visiting state')->default(False);
+            $table->boolean('visited state')->defalut(False);
+            $table->timestamp('visit date')->nullabe();
+            $table->foreignId('invest_transc_id')->nullable();
+            
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('visit');
     }
 };
