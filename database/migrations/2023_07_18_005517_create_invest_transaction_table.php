@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('invest_transaction', function (Blueprint $table) {
             $table->id();
+            $table->timestamp('date');
+            $table->decimal('fund_size',10,2);
+            $table->foreignId('visit_id')->nullable();
+            $table->foreignId('account_id')->nullable();
+            $table->foreignId('invest_id')->nullable();
+            
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('visit', function (Blueprint $table) {
             $table->id();
-            $table->boolean('visiting state')->default(False);
-            $table->boolean('visited state')->defalut(False);
-            $table->timestamp('visit date')->nullabe();
+            $table->boolean('visiting_status')->default(False);
+            $table->boolean('visited_status')->defalut(False);
+            $table->timestamp('visiting_time')->nullabe();
             $table->foreignId('invest_transc_id')->nullable();
             
             $table->softDeletes();
