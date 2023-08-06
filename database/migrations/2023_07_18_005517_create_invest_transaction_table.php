@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('invest_transaction', function (Blueprint $table) {
+        Schema::create('invest_transactions', function (Blueprint $table) {
             $table->id();
             $table->timestamp('date');
             $table->decimal('fund_size',10,2);

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('invest', function (Blueprint $table) {
+        Schema::create('invests', function (Blueprint $table) {
             $table->id();
             $table->decimal('profit_sharing',3,2)->nullable();
             $table->integer('funding_target');
