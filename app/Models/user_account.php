@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class user_account extends Model
 {
@@ -17,6 +19,8 @@ class user_account extends Model
     protected $fillable = [
         'username',
         'password',
+        'role_id',
+        'user_id'
     ];
 
     /**
