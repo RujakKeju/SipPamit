@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +20,8 @@ Route::get('/', function () {
 
 Route::get('/profile', function(){
     return view('Users.userprofile');
+});
+
+Route::get('/login', function(){
+    return view('login');
 });
