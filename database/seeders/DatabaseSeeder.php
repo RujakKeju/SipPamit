@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\role;
+use App\Models\User;
+use App\Models\UserAccount;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +17,29 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::create([
+            'name' => "Dian Lucky",
+            'email' => "dianlucky69@gmail.com",
+            'address' => "Jln Gang Mawar, Dsn Panggung, Ds. Panggung, Kecamatan Pelaihari, Kabupaten Tanah Laut, Kalimantan Selatan",
+            'contact_phone' => "087863946025",
+            'descript' => "Seorang peternak hama yang kompeten",
+            'username' => "dianlucky13",
+            'password' => 'danabelumturun',
+            'role' => "peternak"
+        ]);
+
+        User::create([
+            'name' => "David Hadi",
+            'email' => "davidhadi69@gmail.com",
+            'address' => "Jln Gang Mawar, Dsn Panggung, Ds. Panggung, Kecamatan Pelaihari, Kabupaten Tanah Laut, Kalimantan Selatan",
+            'contact_phone' => "087863946232",
+            'descript' => "Seorang admin amanah",
+            'username' => "david6969",
+            'password' => 'amanahdikit',
+            'role' => "peternak"
+        ]);
+
+
+
     }
 }

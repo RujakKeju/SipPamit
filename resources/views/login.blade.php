@@ -90,7 +90,8 @@
                     <h2 class="fs-3" style="color:#C9EAD0">welcome back!</h2>
                 </div>
                 <div class="row-4">
-                    <form action="" method="post" class="row d-flex justify-content-center align-items-center">
+                    <form action="/login" method="post" class="row d-flex justify-content-center align-items-center">
+                    @crsf
                         <input type="text" class="input" name="username" placeholder="username...">
                         <input type="password" class="input" name="password" placeholder="password...">
                         <button class="btn btn-outline-primary">Login</button>
