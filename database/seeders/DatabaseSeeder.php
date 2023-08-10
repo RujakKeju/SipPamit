@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'contact_phone' => "087863946025",
             'descript' => "Seorang peternak hama yang kompeten",
             'username' => "dianlucky13",
-            'password' => 'danabelumturun',
+            'password' => bcrypt("danabelumturun"),
             'role' => "peternak"
         ]);
 
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'contact_phone' => "087863946232",
             'descript' => "Seorang admin amanah",
             'username' => "david6969",
-            'password' => 'amanahdikit',
+            'password' => bcrypt("amanahdikit"),
             'role' => "peternak"
         ]);
 
