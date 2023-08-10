@@ -76,6 +76,12 @@
 
 <body>
     <div class="container-fluids d-flex justify-content-center align-items-center">
+        @if(session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('loginError') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        @endif
         <div class="row" id="board">
             <div class="col-6">
                 <img src="peternakan_ayam.jpeg" alt="peternakan_ayam" width="300px" height="400px"
@@ -90,11 +96,18 @@
                     <h2 class="fs-3" style="color:#C9EAD0">welcome back!</h2>
                 </div>
                 <div class="row-4">
+
                     <form action="/login" method="post" class="row d-flex justify-content-center align-items-center">
-                    @crsf
-                        <input type="text" class="input" name="username" placeholder="username...">
-                        <input type="password" class="input" name="password" placeholder="password...">
-                        <button class="btn btn-outline-primary">Login</button>
+                        @csrf
+                        <input type="email" class="input" name="email" placeholder="email" required>
+                        @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+
+                        <input type="text" class="input is-invalid" name="password" placeholder="password" required>
+                        <button  type="submit" class="btn btn-outline-primary">Login</button>
                     </form>
                 </div>
                 <div class="row-1 d-flex justify-content-end" style="margin:2px 30px 0px 0px;">
