@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AdminDashboardController;
 
 
 /*
@@ -15,13 +17,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
 
 Route::get('/profile', function(){
     return view('Users.userprofile');
 });
 
-Route::get('/login', function(){
-    return view('login');
-});
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::post('/login', [LoginController::class, 'authentication']);
+
+Route::get('/home', [AdminDashboardController::class, 'index'])->middleware('auth');
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+
+
