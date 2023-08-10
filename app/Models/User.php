@@ -24,6 +24,7 @@ class User extends Authenticatable
         'address',
         'contact_phone',
         'descript',
+        'password',
         'role'
     ];
 
@@ -53,10 +54,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_path',    
     ];
-
-
-    public function account()
-    {
-        return $this->hasOne(UserAccount::class);
-    }
 }

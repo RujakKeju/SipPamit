@@ -3,45 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-<<<<<<< HEAD
-use App\Http\Models\User;
-=======
 use App\Models\User;
-use App\Http\Models\UserAccount;
->>>>>>> b738090adbc66872fd3cc9209d7b69968a9c2fdc
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class UsersController extends Controller
 {
         // Fungsi untuk menampilkan form registrasi
         public function showRegistrationForm()
         {
-            return view('register');
+            return view('regex',[
+                'title' => 'Register',
+                'active' => 'Register',
+            ]);
         }
 
         public function register(Request $request)
         {
             // Validasi data masukan
-            $request->validate([
-                'name' => ['required'],
-                'username',
-                'email',
-                'address',
-                'contact_phone',
-                'descript',
-                'role'
+            $validateData = $request->validate([
+                'name' => ['required','max:255'],
+                'username' => ['required','max:255'],
+                'email' => ['required','max:255','unique:users'],
+                'address' => ['required','max:255'],
+                'password' => ['required','min:8','max:255'],
+                'contact_phone' => ['required','max:255'],
+                'descript' => ['required','max:255'],
+                'role' =>  ['required'],
             ]);
-    
-            // Simpan data user baru ke database
-            $user = new User([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => bcrypt($request->password),
-            ]);
-    
-            $user->save();
+            
+            $validateData['password'] = Hash::make($request->password);
+            $user = new User();
+            $user->create($validateData);
     
             // Redirect atau lakukan tindakan lain setelah berhasil mendaftar
-            return redirect()->route('view'); 
+            return redirect('/login');
         }
 }

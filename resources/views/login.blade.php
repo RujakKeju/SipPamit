@@ -121,7 +121,7 @@
                     <div class="circle"></div>
                 </div>
                 <div class="row-2 d-flex justify-content-center align-items-center" style="margin:10px 5px 5px 5px">
-                    <h4 class="fs-6" style="color:#C9EAD0">Don't have account? <a href="route('register')">Sign up Now</a></h4>
+                    <h4 class="fs-6" style="color:#C9EAD0">Don't have account? <a href="{{ route('registerForm') }}">Sign up Now</a></h4>
                 </div>
             </div>
         </div>

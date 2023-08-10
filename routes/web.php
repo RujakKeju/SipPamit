@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AdminDashboardController;
 
 
@@ -23,6 +24,9 @@ Route::get('/', function () {
 Route::get('/profile', function(){
     return view('Users.userprofile');
 });
+
+Route::get('/register', [UsersController::class, 'showRegistrationForm'])->name('registerForm');
+Route::post('/register', [UsersController::class, 'register']);
 
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginController::class, 'authentication']);
