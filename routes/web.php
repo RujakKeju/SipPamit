@@ -37,3 +37,21 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 
 
+Route::get("/kelolainvest",function (){
+    return view('mykelolainvestasi');
+});
+Route::get("/kelolapeternak",function (){
+    return view('mykelolapeternak');
+});
+Route::get("/kelolaadmin",function (){
+    return view('mykelolaadmin');
+});
+Route::get("/detailkelolapeternak",function (){
+    return view('mydetailkelolapeternak');
+});
+Route::get("/detailkelolainvestasi",function (){
+    return view('mydetailkelolainvestasi');
+});
+Route::get("/dashboard",function (){
+    return view('mydashboard', ["title" => "Dashboard"]);
+});
