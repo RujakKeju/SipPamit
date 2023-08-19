@@ -54,4 +54,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_path',    
     ];
+
+    public function isAdmin(){
+        return $this->role = 'admin';
+    }
+
+    public function isPeternak(){
+        return $this->role = 'peternak';
+    }
+
 }

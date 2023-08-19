@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IsAdmin
 {
@@ -16,9 +17,10 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->guest() || auth()->user()->role !== 'Admin'){
-            abort(403);
+        if (Auth::user()->role === 'admin') {
+            return $next($request);
         }
-        return $next($request);
+
+        return redirect('/login'); // Ganti '/home' dengan URL yang sesuai.
     }
 }

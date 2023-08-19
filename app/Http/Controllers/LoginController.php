@@ -9,24 +9,43 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login');
+        return view('autentikasi');
     }
 
     public function authentication(Request $request)
     {
-        $user = $request->validate([
+        $user = $request->all();
+        $this->validate($request,[
             'email' => ['required', 'email:dns'],
             'password' => 'required'
         ]);
 
-
-        if(Auth::attempt($user)) {
+        if(Auth::attempt(array('email' => $user['email'], 'password' => $user['password']))) {
             $request->session()->regenerate();
-
-            return redirect()->intended('home');
+            if(auth()->user()->role === 'admin'){
+                return redirect()->route('admin');
+            } else {
+                return redirect()-> route('peternak');
+            }
+            // return redirect()->route('auth');
         }
         
-        return back()->with('loginError', "BISA LOGIN NGGA LER?");
+        return redirect()->route('login')->with('loginError', "BISA LOGIN NGGA LER?");
+    }
+
+    public function adminHome(){
+        return view('mydashboard');
+    }
+
+    public function auth($request, $user){
+
+        if ($user->isAdmin()) {
+            return redirect('/admin');
+        } elseif ($user->isPeternak()) {
+            return redirect('/peternak');
+        } else {
+            return redirect('/login');
+        }
     }
     
     public function logout(){
