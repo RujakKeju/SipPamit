@@ -1,10 +1,15 @@
 <?php
 
+use App\Models\products;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InvestController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PeternakController;
+use App\Http\Controllers\InvestNowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,16 +38,28 @@ Route::get('/admin-home', [AdminController::class, 'index'])->name('admin')->mid
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
+//Route Shop 
+Route::get('/shop', [ShopController::class, 'index']);
 
-Route::get('/profile', function(){
-    return view('Users.userprofile');
-});
+//Route Product
+Route::get('/product', [ProductController::class, 'index']);
+
+//Route Invest
+Route::get('/invest', [InvestController::class, 'index']);
+
+//Route Invest Now
+Route::get('/invest-now', [InvestNowController::class, 'index']);
+
+// Route::get('/profile', function(){
+//     return view('Users.userprofile');
+// });
 
 
 
 Route::get("/kelolainvest",function (){
     return view('mykelolainvestasi');
 });
+
 Route::get("/kelolapeternak",function (){
     return view('mykelolapeternak');
 });
