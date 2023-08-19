@@ -84,7 +84,7 @@
         @endif
         <div class="row" id="board">
             <div class="col-6">
-                <img src="peternakan_ayam.jpeg" alt="peternakan_ayam" width="300px" height="400px"
+                <img src="{{ url('storage/images/peternakan_ayam.jpeg') }}" alt="Gambar" width="300px" height="400px"
                     style="border-radius: 10px 0px 0px 10px;">
             </div>
             <div class="col-6" style="background-color: #265E7D; border-radius: 0px 10px 10px 0px;">
