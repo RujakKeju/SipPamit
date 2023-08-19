@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\AdminDashboardController;
-
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PeternakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,23 +17,26 @@ use App\Http\Controllers\AdminDashboardController;
 |
 */
 
+//Route menuju halaman index
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/profile', function(){
-    return view('Users.userprofile');
+    return view('shoppinghome');
 });
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm'])->name('registerForm');
 Route::post('/register', [UsersController::class, 'register']);
 
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authentication']);
 
-Route::get('/home', [AdminDashboardController::class, 'index'])->middleware('auth');
+Route::get('/home', [PeternakController::class, 'index'])->name('peternak');
+Route::get('/admin-home', [AdminController::class, 'index'])->name('admin')->middleware('is_admin');
 
 Route::post('/logout', [LoginController::class, 'logout']);
+
+
+Route::get('/profile', function(){
+    return view('Users.userprofile');
+});
 
 
 
@@ -53,5 +56,5 @@ Route::get("/detailkelolainvestasi",function (){
     return view('mydetailkelolainvestasi');
 });
 Route::get("/dashboard",function (){
-    return view('mydashboard', ["title" => "Dashboard"]);
+    return view('mydashboard');
 });
