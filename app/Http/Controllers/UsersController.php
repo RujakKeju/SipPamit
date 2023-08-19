@@ -19,6 +19,7 @@ class UsersController extends Controller
             ]);
         }
 
+     
         public function register(Request $request)
         {
             // Validasi data masukan

@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
             'email' => "dianlucky69@gmail.com",
             'address' => "Jln Gang Mawar, Dsn Panggung, Ds. Panggung, Kecamatan Pelaihari, Kabupaten Tanah Laut, Kalimantan Selatan",
             'contact_phone' => "087863946025",
-            'descript' => "Seorang peternak hama yang kompeten",
+            'descript' => "Seorang peternak",
             'username' => "dianlucky13",
-            'password' => bcrypt("danabelumturun"),
+            'password' => bcrypt("peternak123"),
             'role' => "peternak"
         ]);
 
@@ -33,10 +33,10 @@ class DatabaseSeeder extends Seeder
             'email' => "davidhadi69@gmail.com",
             'address' => "Jln Gang Mawar, Dsn Panggung, Ds. Panggung, Kecamatan Pelaihari, Kabupaten Tanah Laut, Kalimantan Selatan",
             'contact_phone' => "087863946232",
-            'descript' => "Seorang admin amanah",
+            'descript' => "Seorang admin",
             'username' => "david6969",
-            'password' => bcrypt("amanahdikit"),
-            'role' => "peternak"
+            'password' => bcrypt("admin123"),
+            'role' => "admin"
         ]);
 
 
