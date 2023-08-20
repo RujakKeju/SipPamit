@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'descript' => "Seorang peternak",
             'username' => "dianlucky13",
             'password' => bcrypt("peternak123"),
-            'role' => "peternak"
+            'role' => "pembeli"
         ]);
 
         User::create([

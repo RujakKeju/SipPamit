@@ -7,9 +7,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\InvestController;
+use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\PeternakController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InvestNowController;
+use App\Http\Controllers\KelolaUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +33,10 @@ Route::get('/register', [UsersController::class, 'showRegistrationForm'])->name(
 Route::post('/register', [UsersController::class, 'register']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authentication']);
+Route::post('/login', [LoginController::class, 'authentication'])->middleware('guest');
 
-Route::get('/home', [PeternakController::class, 'index'])->name('peternak');
-Route::get('/admin-home', [AdminController::class, 'index'])->name('admin')->middleware('is_admin');
+Route::get('/home', [PembeliController::class, 'index'])->middleware('auth')->name('pembeli');
+Route::get('/dashboard', [AdminController::class, 'index'])->middleware('is_admin')->name('admin');
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
@@ -50,9 +52,18 @@ Route::get('/invest', [InvestController::class, 'index']);
 //Route Invest Now
 Route::get('/invest-now', [InvestNowController::class, 'index']);
 
-// Route::get('/profile', function(){
-//     return view('Users.userprofile');
-// });
+//Route Kelola peternak
+Route::get('/kelolapeternak', [KelolaUserController::class, 'index_peternak']);
+
+//Route Kelola pembeli
+Route::get('/kelolapembeli', [KelolaUserController::class, 'index_pembeli']);
+
+//Route Kelola admin
+Route::get('/kelolaadmin', [KelolaUserController::class, 'index_admin']);
+
+//Route Kelola profile
+Route::get('/profile', [ProfileController::class, 'index']);
+
 
 
 
@@ -60,18 +71,12 @@ Route::get("/kelolainvest",function (){
     return view('mykelolainvestasi');
 });
 
-Route::get("/kelolapeternak",function (){
-    return view('mykelolapeternak');
-});
 Route::get("/kelolaadmin",function (){
     return view('mykelolaadmin');
 });
 Route::get("/detailkelolapeternak",function (){
-    return view('mydetailkelolapeternak');
+    return view('mydetailkelolauser');
 });
 Route::get("/detailkelolainvestasi",function (){
     return view('mydetailkelolainvestasi');
-});
-Route::get("/dashboard",function (){
-    return view('mydashboard');
 });

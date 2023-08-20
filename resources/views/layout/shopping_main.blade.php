@@ -47,7 +47,18 @@
             </div>
             <div class="ht-right">
               @auth
-              <a href="/" class="login-panel">Selamat datang {{ auth()->user()->name }}</a>
+              <a href="#">Selamat datang {{ auth()->user()->name }}</a>
+                  <ul class="dropdown">
+                    <li><a href="./shopping-cart.html">Pengaturan akun</a></li>
+                    <form action="/logout" method="post">
+                      @csrf
+                        <button type="submit" class="nav-link text-white">
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            </div>
+                            <span class="nav-link-text ms-1">Logout</span>
+                        </button>
+                    </form>
+                  </ul>
               @else
                <a href="/login" class="login-panel"><i class="fa fa-user"></i>Login</a>
               @endauth
