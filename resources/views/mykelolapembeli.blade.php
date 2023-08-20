@@ -24,7 +24,7 @@
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Kelola User</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Kelola Peternak</h6>
+                    <h6 class="font-weight-bolder mb-0">Kelola Pembeli</h6>
                 </nav>
             </div>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
@@ -149,7 +149,7 @@
                                         <p class="text-xs font-weight-bold mb-0">Bang Rusdi</p>
                                     </td>
                                     <td class="align-middle text-center">
-                                        <a href="../pages/mydetailkelolapeternak.html"
+                                        <a href="/detailkelolapeternak"
                                             class="text-secondary font-weight-normal text-xs" data-toggle="tooltip"
                                             data-original-title="Edit user"> <i
                                                 class="material-icons opacity-10">visibility</i> </a>

@@ -25,28 +25,13 @@ class LoginController extends Controller
             if(auth()->user()->role === 'admin'){
                 return redirect()->route('admin');
             } else {
-                return redirect()-> route('peternak');
+                return redirect()-> route('pembeli');
             }
-            // return redirect()->route('auth');
         }
         
-        return redirect()->route('login')->with('loginError', "BISA LOGIN NGGA LER?");
+        return redirect()->route('login')->with('loginError', "Login gagal, Username/password salah!");
     }
 
-    public function adminHome(){
-        return view('mydashboard');
-    }
-
-    public function auth($request, $user){
-
-        if ($user->isAdmin()) {
-            return redirect('/admin');
-        } elseif ($user->isPeternak()) {
-            return redirect('/peternak');
-        } else {
-            return redirect('/login');
-        }
-    }
     
     public function logout(){
 

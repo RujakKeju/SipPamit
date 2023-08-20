@@ -15,7 +15,7 @@ class UsersController extends Controller
         {
             return view('regex',[
                 'title' => 'Register',
-                'active' => 'Register',
+                'active' => 'Register'
             ]);
         }
 
@@ -31,7 +31,7 @@ class UsersController extends Controller
                 'password' => ['required','min:8','max:255'],
                 'contact_phone' => ['required','max:255'],
                 'descript' => ['required','max:255'],
-                'role' =>  ['required'],
+                'role' =>  ['required']
             ]);
             
             $validateData['password'] = Hash::make($request->password);
