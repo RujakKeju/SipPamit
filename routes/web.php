@@ -64,7 +64,15 @@ Route::get('/kelolaadmin', [KelolaUserController::class, 'index_admin']);
 //Route Kelola profile
 Route::get('/profile', [ProfileController::class, 'index']);
 
+//Route Registrasi 
+Route::get("/regis",function (){
+    return view('myregister');
+});
 
+//Route Login baru
+Route::get("/myaccountlogin",function (){
+    return view('mylogin');
+});
 
 
 Route::get("/kelolainvest",function (){
