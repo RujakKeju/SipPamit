@@ -6,7 +6,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Fashi | Template</title>
+    <title>{{$title}}</title>
 
     <!-- Google Font -->
     <link
@@ -163,42 +163,46 @@
           <div class="col-lg-6 offset-lg-3">
             <div class="register-form">
               <h2>Daftar</h2>
-              <form action="#">
+              <form action="/register" method="post">
+                @csrf
                 <div class="group-input">
                   <label for="username">Nama Lengkap</label>
-                  <input type="text" id="username" placeholder="nama lengkap anda" />
+                  <input type="text" id="username" name="name" placeholder="nama lengkap anda" />
                 </div>
                 <div class="group-input">
                   <label for="username">Email</label>
-                  <input type="text" id="username" placeholder="masukan alamat email anda" />
+                  <input type="text" id="username" name="email" placeholder="masukan alamat email anda" />
                 </div>
                 <div class="group-input">
                   <label for="username">Alamat</label>
-                  <textarea class="form-control" id="alamat" name="alamat" placeholder="masukan alamat lengkap anda" rows="3"></textarea>
+                  <textarea class="form-control" id="alamat" name="address" placeholder="masukan alamat lengkap anda" rows="3"></textarea>
                 </div>
                 <div class="group-input">
-                  <label for="username">Nomor Telepon</label>
-                  <input type="text" id="username" placeholder="masukan nomor telepon anda" />
+                  <label for="contact">Nomor Telepon</label>
+                  <input type="text" id="contact" name="contact_phone" placeholder="masukan nomor telepon anda" />
                 </div>
                 <div class="group-input">
                   <label for="formFile" class="form-label">Pilih Foto Profil</label>
-                  <input class="form-control" type="file" id="formFile" />
+                  <input class="form-control" name="profile_photo_path" type="file" id="formFile" />
                 </div>
                 <div class="group-input">
-                  <label for="username">Deskripsi</label>
-                  <textarea class="form-control" id="alamat" name="alamat" placeholder="ini deskripsi apa njer" rows="3"></textarea>
+                  <label for="descript">Deskripsi</label>
+                  <textarea class="form-control" id="descript" name="descript" placeholder="ini deskripsi apa njer" rows="3"></textarea>
                 </div>
                 <div class="group-input">
                   <label for="username">Username</label>
-                  <input type="text" id="username" placeholder="nama akun pengguna" />
+                  <input type="text" id="username" name="username" placeholder="nama akun pengguna" />
                 </div>
                 <div class="group-input">
-                  <label for="username">Password</label>
-                  <input type="password" id="username" placeholder="masukan password anda" />
+                  <input type="hidden" id="role" name="role" value="user" />
                 </div>
                 <div class="group-input">
-                  <label for="username">Konfirmasi Password</label>
-                  <input type="password" id="username" placeholder="konfirmasi password anda" />
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" placeholder="masukan password anda" />
+                </div>
+                <div class="group-input">
+                  <label for="password_confirm">Konfirmasi Password</label>
+                  <input type="password" id="password_confirm"  placeholder="konfirmasi password anda" />
                 </div>
 
                 <button type="submit" class="site-btn register-btn">DAFTAR</button>
