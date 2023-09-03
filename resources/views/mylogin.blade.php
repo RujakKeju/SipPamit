@@ -158,19 +158,33 @@
 
     <!-- Register Section Begin -->
     <div class="register-login-section spad">
+      @if(session()->has('loginError'))
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ session('loginError') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      @endif
       <div class="container">
         <div class="row">
           <div class="col-lg-6 offset-lg-3">
             <div class="login-form">
               <h2>Login</h2>
-              <form action="#">
+              <form  action="/login" method="post">
                 <div class="group-input">
                   <label for="username">Username</label>
-                  <input type="text" id="username" placeholder="Masukan Username Anda" />
+                  @csrf
+                  <input type="email" class="input" name="email" placeholder="email" required />
+                  @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                  @enderror
                 </div>
                 <div class="group-input">
-                  <label for="pass">Password</label>
-                  <input type="password" id="pass" placeholder="Masukan Password Anda" />
+                 <label for="pass">Password</label>
+                 <input type="text" class="input is-invalid" name="password" placeholder="password" required>
+                 {{-- <input type="password" id="pass" placeholder="Masukan Password Anda" /> --}}
+                        
                 </div>
                 <div class="group-input gi-check">
                   <div class="gi-more">
@@ -185,7 +199,7 @@
                 <button type="submit" class="site-btn login-btn">Login</button>
               </form>
               <div class="switch-login">
-                <a href="./register.html" class="or-login">Bikin Akun njer klo gk punya</a>
+                <a  href="{{ route('registerForm') }}" class="or-login">Sign Up Now</a>
               </div>
             </div>
           </div>

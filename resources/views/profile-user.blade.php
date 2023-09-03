@@ -2,34 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Fashi Template" />
+    <meta name="keywords" content="Fashi, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gmail-like Interface</title>
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fashi | Template</title>
+
+    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./public/assets/css/profile.css" />
+
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/themify-icons.css" type="text/css" />
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/themify-icons.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
   </head>
   <body>
     <!-- HEADER -->
@@ -370,9 +364,21 @@
     </div>
 
     <!-- Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> --}}
+
+    <!-- Js Plugins -->
+    <script src="../assets/js/shop/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/shop/bootstrap.min.js"></script>
+    <script src="../assets/js/shop/jquery-ui.min.js"></script>
+    <script src="../assets/js/shop/jquery.countdown.min.js"></script>
+    <script src="../assets/js/shop/jquery.nice-select.min.js"></script>
+    <script src="../assets/js/shop/jquery.zoom.min.js"></script>
+    <script src="../assets/js/shop/jquery.dd.min.js"></script>
+    <script src="../assets/js/shop/jquery.slicknav.js"></script>
+    <script src="../assets/js/shop/owl.carousel.min.js"></script>
+    <script src="../assets/js/shop/main.js"></script>
     <script>
       const sidebar = document.getElementById("sidebar");
       const content = document.getElementById("content");
