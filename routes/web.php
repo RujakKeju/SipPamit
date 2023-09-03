@@ -74,6 +74,12 @@ Route::get("/myaccountlogin",function (){
     return view('mylogin');
 });
 
+//Route Login baru
+Route::get("/uprof",function (){
+    return view('profile-user');
+});
+
+
 
 Route::get("/kelolainvest",function (){
     return view('mykelolainvestasi');
