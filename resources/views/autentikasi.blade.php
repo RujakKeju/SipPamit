@@ -182,7 +182,7 @@
                 </div>
                 <div class="group-input">
                  <label for="pass">Password</label>
-                 <input type="password" class="input is-invalid" name="password" placeholder="password" required>
+                 <input type="text" class="input is-invalid" name="password" placeholder="password" required>
                  {{-- <input type="password" id="pass" placeholder="Masukan Password Anda" /> --}}
                         
                 </div>
