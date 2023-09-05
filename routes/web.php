@@ -79,6 +79,11 @@ Route::get("/uprof",function (){
     return view('profile-user');
 });
 
+//Route profile pengguna
+Route::get("/myprouser",function (){
+    return view('myprofileuser');
+});
+
 
 
 Route::get("/kelolainvest",function (){
