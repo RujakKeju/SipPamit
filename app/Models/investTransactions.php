@@ -5,27 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class invest extends Model
+class investTransactions extends Model
 {
     use HasFactory;
 
-            /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
-        'profit_sharing',
-        'funding_target',
-        'period',
+        'fund_size',
+        'visit_id',
+        'account_id',
+        'invest_id'
     ];
 
     protected $guards = [
         'id',
     ];
-    
+
     protected $casts = [
         'created_at' => 'datetime:Y-m-d H:m:s',
         'updated_at' => 'datetime:Y-m-d H:m:s'
     ];
+
 }

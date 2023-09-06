@@ -1,0 +1,48 @@
+
+      .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .custom-file-upload:hover {
+        background-color: #0056b3;
+      }
+
+      .email {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .email img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+      }
+      #sidebar {
+        width: 250px;
+        height: 100%;
+        background-color: #ffffff;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      #content {
+        margin-left: 20px;
+        padding: 20px;
+      }
+
+      /* Tambahkan CSS untuk menyesuaikan tampilan elemen Foto Profil */
+      #previewProfileImage {
+        border-radius: 50%;
+        margin-left: auto; /* Memindahkan ke sebelah kanan */
+        margin-right: 0; /* Memindahkan ke sebelah kanan */
+      }
+

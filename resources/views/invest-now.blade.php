@@ -255,7 +255,42 @@
         </div>
       </section>
       <!-- Product Shop Section End -->
-  
+    <!-- Table investor begin -->
+    <div class="container mt-5">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="mb-0">Investor Table</h2>
+       
+    </div>
+      <table class="table table-bordered">
+          <thead>
+              <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Investor</th>
+                  <th scope="col">Kontribusi</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <th scope="row">1</th>
+                  <td>John Doe</td>
+                  <td>$10,000</td>
+              </tr>
+              <tr>
+                  <th scope="row">2</th>
+                  <td>Jane Smith</td>
+                  <td>$20,000</td>
+              </tr>
+              <tr>
+                  <th scope="row">3</th>
+                  <td>ABC Inc.</td>
+                  <td>$50,000</td>
+              </tr>
+              <!-- Add more rows as needed -->
+          </tbody>
+      </table>
+  </div>
+
+    <!-- table investor end -->
       <!-- Related Products Section End -->
       <div class="related-products spad">
         <div class="container">

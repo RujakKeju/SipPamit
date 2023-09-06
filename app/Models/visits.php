@@ -16,8 +16,12 @@ class visits extends Model
      */
     protected $fillable = [
         'visiting_status',
-        'visited_status',
+        'visited_status'
 
+    ];
+
+    protected $guards = [
+        'id',
     ];
 
     protected $casts = [

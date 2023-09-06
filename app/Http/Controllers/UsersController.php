@@ -13,7 +13,7 @@ class UsersController extends Controller
         // Fungsi untuk menampilkan form registrasi
         public function showRegistrationForm()
         {
-            return view('regex',[
+            return view('myregister',[
                 'title' => 'Register',
                 'active' => 'Register'
             ]);

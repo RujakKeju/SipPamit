@@ -6,7 +6,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Login</title>
+    <title>{{$title}}</title>
 
     <!-- Google Font -->
     <link
@@ -158,48 +158,57 @@
 
     <!-- Register Section Begin -->
     <div class="register-login-section spad">
-      @if(session()->has('loginError'))
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          {{ session('loginError') }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      @endif
       <div class="container">
         <div class="row">
           <div class="col-lg-6 offset-lg-3">
-            <div class="login-form">
-              <h2>Login</h2>
-              <form  action="/login" method="post">
+            <div class="register-form">
+              <h2>Daftar</h2>
+              <form action="/register" method="post">
+                @csrf
+                <div class="group-input">
+                  <label for="username">Nama Lengkap</label>
+                  <input type="text" id="username" name="name" placeholder="nama lengkap anda" />
+                </div>
+                <div class="group-input">
+                  <label for="username">Email</label>
+                  <input type="text" id="username" name="email" placeholder="masukan alamat email anda" />
+                </div>
+                <div class="group-input">
+                  <label for="username">Alamat</label>
+                  <textarea class="form-control" id="alamat" name="address" placeholder="masukan alamat lengkap anda" rows="3"></textarea>
+                </div>
+                <div class="group-input">
+                  <label for="contact">Nomor Telepon</label>
+                  <input type="text" id="contact" name="contact_phone" placeholder="masukan nomor telepon anda" />
+                </div>
+                <div class="group-input">
+                  <label for="formFile" class="form-label">Pilih Foto Profil</label>
+                  <input class="form-control" name="profile_photo_path" type="file" id="formFile" />
+                </div>
+                <div class="group-input">
+                  <label for="descript">Deskripsi</label>
+                  <textarea class="form-control" id="descript" name="descript" placeholder="ini deskripsi apa njer" rows="3"></textarea>
+                </div>
                 <div class="group-input">
                   <label for="username">Username</label>
-                  @csrf
-                  <input type="email" class="input" name="email" placeholder="email" required />
-                  @error('email')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                  @enderror
+                  <input type="text" id="username" name="username" placeholder="nama akun pengguna" />
                 </div>
                 <div class="group-input">
-                 <label for="pass">Password</label>
-                 <input type="text" class="input is-invalid" name="password" placeholder="password" required>
-                 {{-- <input type="password" id="pass" placeholder="Masukan Password Anda" /> --}}
-                        
+                  <input type="hidden" id="role" name="role" value="user" />
                 </div>
-                <div class="group-input gi-check">
-                  <div class="gi-more">
-                    <label for="save-pass">
-                      Simpan Password
-                      <input type="checkbox" id="save-pass" />
-                      <span class="checkmark"></span>
-                    </label>
-                    <a href="#" class="forget-pass">Lupa Password</a>
-                  </div>
+                <div class="group-input">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" placeholder="masukan password anda" />
                 </div>
-                <button type="submit" class="site-btn login-btn">Login</button>
+                <div class="group-input">
+                  <label for="password_confirm">Konfirmasi Password</label>
+                  <input type="password" id="password_confirm"  placeholder="konfirmasi password anda" />
+                </div>
+
+                <button type="submit" class="site-btn register-btn">DAFTAR</button>
               </form>
               <div class="switch-login">
-                <a  href="{{ route('registerForm') }}" class="or-login">Sign Up Now</a>
+                <a href="./login.html" class="or-login">Login</a>
               </div>
             </div>
           </div>
