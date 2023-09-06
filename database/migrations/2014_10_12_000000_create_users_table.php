@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('nama_peternakan')->nullable();
             $table->string('email')->unique();
             $table->string('address')->nullable();
             $table->string('contact_phone');
-            $table->string('profile_photo', 2048)->nullable();
+            $table->string('profile_photo', 2048)->default('https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/team-2.jpg');
             $table->text('descript')->nullable();
             $table->string('username')->unique();
             $table->string('password');
