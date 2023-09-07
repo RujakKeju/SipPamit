@@ -12,6 +12,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InvestNowController;
 use App\Http\Controllers\KelolaUserController;
+use App\Http\Controllers\KelolaPeternakController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +55,20 @@ Route::get('/invest', [InvestController::class, 'index']);
 Route::get('/invest-now', [InvestNowController::class, 'index']);
 
 //Route Kelola peternak
-Route::get('/kelolapeternak', [KelolaUserController::class, 'index_peternak']);
+Route::get('/kelolapeternak', [KelolaPeternakController::class, 'index']);
+
+//Route Kelola peternak tambah peternak
+Route::post('/kelolapeternak/store', [KelolaPeternakController::class, 'store']);
+
+
+//Route Detail Kelola peternak
+Route::get('/detailpeternak/{id}', [KelolaPeternakController::class, 'detail'])->name('detailpeternak');
+
+//Route edit Kelola peternak
+Route::put('/detailpeternak/{id}/update', [KelolaPeternakController::class, 'update']);
+
+//Route hapus Kelola peternak
+Route::delete('/kelolapeternak/{id}', [KelolaPeternakController::class, 'destroy']);
 
 //Route Kelola pembeli
 Route::get('/kelolapembeli', [KelolaUserController::class, 'index_pembeli']);
@@ -93,9 +108,7 @@ Route::get("/kelolainvest",function (){
 Route::get("/kelolaadmin",function (){
     return view('mykelolaadmin');
 });
-Route::get("/detailkelolapeternak",function (){
-    return view('mydetailkelolauser');
-});
+
 Route::get("/detailkelolainvestasi",function (){
     return view('mydetailkelolainvestasi');
 });
