@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\invest;
 
 class InvestController extends Controller
 {
@@ -10,4 +12,6 @@ class InvestController extends Controller
     {
         return view('invest');
     }
+    
+
 }
