@@ -163,7 +163,7 @@
           <div class="col-lg-6 offset-lg-3">
             <div class="register-form">
               <h2>Daftar</h2>
-              <form action="/register" method="post">
+              <form action="{{ route('registPost') }}" method="post">
                 @csrf
                 <div class="group-input">
                   <label for="username">Nama Lengkap</label>
@@ -187,7 +187,7 @@
                 </div>
                 <div class="group-input">
                   <label for="descript">Deskripsi</label>
-                  <textarea class="form-control" id="descript" name="descript" placeholder="ini deskripsi apa njer" rows="3"></textarea>
+                  <textarea class="form-control" id="descript" name="descript" placeholder="deskripsi anda" rows="3"></textarea>
                 </div>
                 <div class="group-input">
                   <label for="username">Username</label>
@@ -204,11 +204,10 @@
                   <label for="password_confirm">Konfirmasi Password</label>
                   <input type="password" id="password_confirm"  placeholder="konfirmasi password anda" />
                 </div>
-
                 <button type="submit" class="site-btn register-btn">DAFTAR</button>
               </form>
               <div class="switch-login">
-                <a href="./login.html" class="or-login">Login</a>
+                <a href="{{ route('login') }}" class="or-login">Login</a>
               </div>
             </div>
           </div>

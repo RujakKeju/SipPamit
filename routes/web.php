@@ -32,7 +32,7 @@ Route::get('/', function () {
 });
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm'])->name('registerForm');
-Route::post('/register', [UsersController::class, 'register']);
+Route::post('/register', [UsersController::class, 'register'])->name('registPost');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authentication'])->middleware('guest');
