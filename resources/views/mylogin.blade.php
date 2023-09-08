@@ -171,7 +171,7 @@
               <h2>Login</h2>
               <form  action="/login" method="post">
                 <div class="group-input">
-                  <label for="username">Username</label>
+                  <label for="username">Email</label>
                   @csrf
                   <input type="email" class="input" name="email" placeholder="email" required />
                   @error('email')
