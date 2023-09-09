@@ -40,7 +40,7 @@
                         </div>
                         <span class="nav-link-text ms-1">Kelola User</span>
                     </a> --}}
-                </li>
+                {{-- </li> --}}
                 {{-- <li class="nav-item">
                     <a class="nav-link text-white {{ Request::is('kelolaadmin') ? 'bg-gradient-primary' : '' }}" href="/kelolaadmin">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -99,7 +99,7 @@
         <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-white" href="../pages/mydashboard.html">
+              <a class="nav-link text-white {{ Request::is('dashboard') }}" href="/dashboard">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                   <i class="material-icons opacity-10">dashboard</i>
                 </div>
@@ -115,19 +115,19 @@
               </a>
               <div class="collapse" id="collapseExample">
                 <div class="card-body">
-                  <a class="nav-link text-white" href="../pages/mykelolaadmin.html">
+                  <a class="nav-link text-white" href="/kelolaadmin">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                       <i class="material-icons opacity-10">settings_accessibility </i>
                     </div>
                     <span class="nav-link-text ms-1">Kelola Admin</span>
                   </a>
-                  <a class="nav-link text-white" href="../pages/mykelolapeternak.html">
+                  <a class="nav-link text-white" href="/kelolapeternak">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                       <i class="material-icons opacity-10">real_estate_agent</i>
                     </div>
                     <span class="nav-link-text ms-1">Kelola Peternak</span>
                   </a>
-                  <a class="nav-link text-white" href="../pages/mykelolainvestor.html">
+                  <a class="nav-link text-white" href="/kelolapembeli">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                       <i class="material-icons opacity-10">payments</i>
                     </div>
@@ -138,7 +138,7 @@
             </li>
   
             <li class="nav-item">
-              <a class="nav-link text-white" href="../pages/mykelolainvestasi.html">
+              <a class="nav-link text-white {{ Request::is('kelolainvest') }}" href="/kelolainvest">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                   <i class="material-icons opacity-10">table_view</i>
                 </div>
@@ -150,7 +150,7 @@
               <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="../pages/myprofile.html">
+              <a class="nav-link text-white {{ Request::is('profile') }}" href="/profile">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                   <i class="material-icons opacity-10">person</i>
                 </div>
