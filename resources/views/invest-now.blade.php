@@ -150,6 +150,144 @@
                     </li>
                   </ul>
                 </div>
+                 <!-- modal Deskripsi -->
+              <div class="modal fade" id="editDeskripsiModal" tabindex="-1" role="dialog" aria-labelledby="editDeskripsiModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editDeskripsiModalLabel">Edit Deskripsi</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="editDeskripsiForm">
+                        <div class="mb-3">
+                          <label for="perkenalan">Perkenalan</label>
+                          <textarea class="form-control" id="perkenalanEdit" name="perkenalanEdit"></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="sejarah">Sejarah</label>
+                          <textarea class="form-control" id="sejarahEdit" name="sejarahEdit"></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="img">Gambar</label>
+                          <input type="file" class="form-control-file" id="imgEdit" name="imgEdit">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                      <button type="button" class="btn btn-primary" id="simpanEditDeskripsi">Simpan</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- end of modal deskripsi-->
+              <!-- modal Alamat -->
+              <div class="modal fade" id="editAlamatModal" tabindex="-1" role="dialog" aria-labelledby="editAlamatModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editAlamatModalLabel">Edit Alamat $ kontak</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="editAlamatForm">
+                        <div class="mb-3">
+                          <label for="perkenalan">Kecamatan</label>
+                          <input class="form-control" id="kecamatanEdit" name="kecamatanEdit"></input>
+                        </div>
+                        <div class="mb-3">
+                          <label for="perkenalan">Desa</label>
+                          <input class="form-control" id="desaEdit" name="desaEdit"></input>
+                        </div>
+                        <div class="mb-3">
+                          <label for="perkenalan">Jalan</label>
+                          <input class="form-control" id="jalanEdit" name="jalanEdit"></input>
+                        </div>
+                        <div class="mb-3">
+                          <label for="perkenalan">RT/RW</label>
+                          <input class="form-control" id="rtEdit" name="rtEdit"></input>
+                        </div>
+                        <div class="mb-3">
+                          <label for="sejarah">Email</label>
+                          <input class="form-control" id="emailEdit" name="emailEdit"></input>
+                        </div>
+                        <div class="mb-3">
+                          <label for="sejarah">GMaps</label>
+                          <input class="form-control" id="mapEdit" name="mapEdit"></input>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                      <button type="button" class="btn btn-primary" id="simpanEditAlamat">Simpan</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- end of modal Alamat-->
+             <!-- Modal Kandang -->
+            <div class="modal fade" id="editKandangModal" tabindex="-1" role="dialog" aria-labelledby="editKandangModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editKandangModalLabel">Edit Detail Kandang</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="editKandangForm">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="PanjangEdit">Panjang</label>
+                            <input type="text" class="form-control" id="PanjangEdit" name="PanjangEdit">
+                          </div>
+                          <div class="mb-3">
+                            <label for="LebarEdit">Lebar</label>
+                            <input type="text" class="form-control" id="LebarEdit" name="LebarEdit">
+                          </div>
+                          <div class="mb-3">
+                            <label for="BahanEdit">Bahan</label>
+                            <input type="text" class="form-control" id="BahanEdit" name="BahanEdit">
+                          </div>
+                          <div class="mb-3">
+                            <label for="tahunEdit">Tahun Berdiri</label>
+                            <input type="text" class="form-control" id="tahunEdit" name="tahunEdit">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="JenisEdit">Jenis</label>
+                            <input type="text" class="form-control" id="JenisEdit" name="JenisEdit">
+                          </div>
+                          <div class="mb-3">
+                            <label for="MuatanEdit">Muatan</label>
+                            <input type="text" class="form-control" id="MuatanEdit" name="MuatanEdit">
+                          </div>
+                          <div class="mb-3">
+                            <label for="pakanEdit">Pakan</label>
+                            <input type="text" class="form-control" id="pakanEdit" name="pakanEdit">
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary" id="simpanEditKandang">Simpan</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- End of Modal Kandang -->
                 <div class="tab-item-content">
                   <div class="tab-content">
                     <div
@@ -157,6 +295,10 @@
                       id="tab-1"
                       role="tabpanel"
                     >
+                    <br>
+                  <!-- Trigger tombol modal -->
+                  <a class="btn btn-primary" id="editDeskripsiButton" data-toggle="modal" data-target="#editDeskripsiModal"><i class="fas fa-pencil"></i> Edit</a>
+                  <!-- end of trigger -->
                       <div class="product-content">
                         <div class="row">
                           <div class="col-lg-7">
@@ -180,6 +322,10 @@
                       </div>
                     </div>
                     <div class="tab-pane fade" id="tab-2" role="tabpanel">
+                    <br>
+                    <!-- Trigger tombol modal -->
+                    <a class="btn btn-primary" id="editAlamatButton" data-toggle="modal" data-target="#editAlamatModal"><i class="fas fa-pencil"></i> Edit</a>  
+                    <!-- end of trigger -->
                       <div class="specification-table">
                         <div class="row">
                           <div class="col-md-6">
@@ -218,6 +364,9 @@
                       </div>
                     </div>
                     <div class="tab-pane fade" id="tab-3" role="tabpanel">
+                    <!-- Trigger tombol modal -->
+                    <a class="btn btn-primary" id="editKandangButton" data-toggle="modal" data-target="#editKandangModal"><i class="fas fa-pencil"></i> Edit</a>  
+                    <!-- end of trigger -->
                       <div class="customer-review-option">
                             <div class="row">
                               <div class="col-md-6">
