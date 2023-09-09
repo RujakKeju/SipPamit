@@ -1,4 +1,4 @@
-/******************************************************************
+/* *****************************************************************
   Template Name: Fashi
   Description: Fashi eCommerce HTML Template
   Author: Colorlib
@@ -27,9 +27,9 @@
 
 -------------------------------------------------------------------*/
 
-/*----------------------------------------*/
+/* ---------------------------------------- */
 /* Template default CSS
-/*----------------------------------------*/
+/* ---------------------------------------- */
 
 html,
 body {
@@ -107,10 +107,10 @@ ol {
 	padding: 0;
 	margin: 0;
 }
-
-/*---------------------
+/* 
+---------------------
   Helper CSS
------------------------*/
+----------------------- */
 
 .section-title {
 	margin-bottom: 40px;
@@ -1513,6 +1513,7 @@ ol {
 
 .footer-section {
 	background: #191919;
+	padding-top: 75px;
 }
 
 .footer-left {
@@ -1660,13 +1661,10 @@ ol {
 }
 
 .copyright-reserved .copyright-text {
+	float: left;
 	font-size: 16px;
 	color: #b2b2b2;
-	text-align: center; /* Tambahkan properti ini untuk mengatur teks ke tengah */
-  }
-  
-  /* Hapus properti float: left; */
-  
+}
 
 .copyright-reserved .copyright-text a {
 	color: #b2b2b2;
@@ -2393,7 +2391,7 @@ ol {
 	font-weight: 700;
 	color: #b2b2b2;
 	text-transform: uppercase;
-	padding: 18px 100px;
+	padding: 18px 122px;
 	position: relative;
 	border-top: 1px solid #ebebeb;
 	border-left: 1px solid #ebebeb;
