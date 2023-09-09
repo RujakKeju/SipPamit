@@ -13,5 +13,6 @@ class InvestController extends Controller
         return view('invest');
     }
     
+    
 
 }

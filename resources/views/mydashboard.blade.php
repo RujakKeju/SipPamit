@@ -26,7 +26,7 @@
                 </div>
                 <div class="text-end pt-1">
                   <p class="text-sm mb-0 text-capitalize">User Online</p>
-                  <h4 class="mb-0">1726</h4>
+                  <h4 class="mb-0">{{ $jumlahUser }}</h4>
                 </div>
               </div>
               <hr class="dark horizontal my-0" />
@@ -43,7 +43,7 @@
                 </div>
                 <div class="text-end pt-1">
                   <p class="text-sm mb-0 text-capitalize">Farmer Online</p>
-                  <h4 class="mb-0">765</h4>
+                  <h4 class="mb-0">{{$jumlah_peternak}}</h4>
                 </div>
               </div>
               <hr class="dark horizontal my-0" />
