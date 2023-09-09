@@ -117,12 +117,12 @@
                               <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Disabled</button>
                             </div>
                           </nav>
-                          <div class="tab-content" id="nav-tabContent">
+                          <!-- <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, necessitatibus sequi molestiae ipsa suscipit veniam eaque facere optio quis praesentium consequuntur iusto in ut! Iste aliquid sed tempore fugiat error?</div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quam deserunt tempore soluta expedita suscipit. Dignissimos possimus voluptatum, magni dicta repudiandae, dolore eaque incidunt similique deserunt ipsum maxime nostrum voluptatibus.</div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus, reiciendis minus explicabo sunt facere quidem quia quis voluptates porro vel a amet consequatur labore ad adipisci repellendus minima aperiam. Provident?</div>
                             <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laborum deleniti hic praesentium exercitationem impedit sequi dolores minus id, possimus adipisci ipsa aperiam quibusdam tempora ipsam velit illum vel nihil.</div>
-                          </div>
+                          </div> -->
                     </div>
                 </div>
             </div>
