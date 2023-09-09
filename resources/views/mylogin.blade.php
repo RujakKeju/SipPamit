@@ -169,7 +169,7 @@
           <div class="col-lg-6 offset-lg-3">
             <div class="login-form">
               <h2>Login</h2>
-              <form  action="/login" method="post">
+              <form  action="{{ route('login') }}" method="post">
                 <div class="group-input">
                   <label for="username">Username</label>
                   @csrf
