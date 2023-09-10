@@ -169,10 +169,10 @@
           <div class="col-lg-6 offset-lg-3">
             <div class="login-form">
               <h2>Login</h2>
-              <form  action="/login" method="post">
+              <form  action="/auth" method="post">
+                @csrf
                 <div class="group-input">
                   <label for="username">Email</label>
-                  @csrf
                   <input type="email" class="input" name="email" placeholder="email" required />
                   @error('email')
                         <div class="invalid-feedback">
@@ -183,8 +183,7 @@
                 <div class="group-input">
                  <label for="pass">Password</label>
                  <input type="text" class="input is-invalid" name="password" placeholder="password" required>
-                 {{-- <input type="password" id="pass" placeholder="Masukan Password Anda" /> --}}
-                        
+                 <!-- {{-- <input type="password" id="pass" placeholder="Masukan Password Anda" /> --}} -->
                 </div>
                 <div class="group-input gi-check">
                   <div class="gi-more">

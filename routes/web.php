@@ -36,12 +36,12 @@ Route::get('/register', [UsersController::class, 'showRegistrationForm'])->name(
 Route::post('/register', [UsersController::class, 'register'])->name('registPost');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authentication'])->middleware('guest');
+Route::post('/auth', [LoginController::class, 'authentication']);
 
-Route::get('/home', [PembeliController::class, 'index'])->middleware('auth')->name('pembeli');
+Route::get('/home', [PembeliController::class, 'index'])->name('pembeli');
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware('is_admin')->name('admin');
 
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
 //Route Shop 
 Route::get('/shop', [ShopController::class, 'index']);
@@ -79,6 +79,7 @@ Route::get('/kelolaadmin', [KelolaUserController::class, 'index_admin']);
 
 //Route Kelola profile
 Route::get('/profile', [ProfileController::class, 'index']);
+Route::post('/profile/update', [ProfileController::class, 'update']);
 
 //Route Registrasi 
 Route::get("/regis",function (){
