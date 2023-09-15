@@ -5,14 +5,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\InvestController;
 use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InvestNowController;
 use App\Http\Controllers\KelolaUserController;
+use App\Http\Controllers\KelolaAdminController;
 use App\Http\Controllers\KelolaPeternakController;
 
 
@@ -75,7 +76,16 @@ Route::delete('/kelolapeternak/{id}', [KelolaPeternakController::class, 'destroy
 Route::get('/kelolapembeli', [KelolaUserController::class, 'index_pembeli']);
 
 //Route Kelola admin
-Route::get('/kelolaadmin', [KelolaUserController::class, 'index_admin']);
+Route::get('/kelolaadmin', [KelolaAdminController::class, 'index']);
+
+//Route hapus Kelola admin
+Route::delete('/kelolaadmin/{id}', [KelolaAdminController::class, 'destroy']);
+
+//Route Kelola peternak tambah peternak
+Route::post('/kelolaadmin/store', [KelolaAdminController::class, 'store']);
+
+//Route edit Kelola peternak
+Route::put('/kelolaadmin/{id}/update', [KelolaAdminController::class, 'update']);
 
 //Route Kelola profile
 Route::get('/profile', [ProfileController::class, 'index']);
@@ -107,9 +117,9 @@ Route::get("/kelolainvest",function (){
     return view('mykelolainvestasi');
 });
 
-Route::get("/kelolaadmin",function (){
-    return view('mykelolaadmin');
-});
+// Route::get("/kelolaadmin",function (){
+//     return view('mykelolaadmin');
+// });
 
 Route::get("/detailkelolainvestasi",function (){
     return view('mydetailkelolainvestasi');
