@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('invests', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->decimal('profit_sharing',3,2)->nullable();
             $table->integer('funding_target');
             $table->integer('period')->nullable();
