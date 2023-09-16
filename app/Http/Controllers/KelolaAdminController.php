@@ -1,21 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class KelolaPeternakController extends Controller
+class KelolaAdminController extends Controller
 {
     public function index(){
-        $peternak =  User::where('role', 'peternak')->paginate(1);
-        return view('mykelolapeternak', compact(['peternak']));
+        $admin = User::where('role', 'admin')->paginate(1);
+        return view('mykelolaadmin', compact(['admin']));
     }
     
-    public function detail($id){
-        $peternak = User::find($id);
-        return view('mydetailkelolauser', compact(['peternak']));
-    }
+
 
     public function store(Request $request){
        $data = $request->except('_token');
@@ -25,21 +21,22 @@ class KelolaPeternakController extends Controller
         $profilePhotoPath = $request->file('profile_photo')->store('profile_photos', 'public');
         $data['profile_photo'] = $profilePhotoPath;
     }
-    // dd($request);
+   
     // Create the user record with both the profile photo path and other data
      User::create($data);
-        return redirect('/kelolapeternak');
+         return redirect('/kelolaadmin');
     }
 
+
     function destroy($id){
-        $peternak = User::find($id);
-        $peternak->delete();
-        return redirect('/kelolapeternak');
+        $admin = User::find($id);
+        $admin->delete();
+        return redirect('/kelolaadmin');
     }
 
     public function update($id, Request $request){
         $data = $request->except('_token');
-        $peternak = User::find($id);
+        $admin = User::find($id);
      // Handle the profile photo upload
      if ($request->hasFile('profile_photo')) {
          $profilePhotoPath = $request->file('profile_photo')->store('profile_photos', 'public');
@@ -47,7 +44,7 @@ class KelolaPeternakController extends Controller
      }
      // dd($request);
      // Create the user record with both the profile photo path and other data
-      $peternak -> update($data);
-         return redirect('/kelolapeternak');
+      $admin -> update($data);
+         return redirect('/kelolaadmin');
      }
 }
