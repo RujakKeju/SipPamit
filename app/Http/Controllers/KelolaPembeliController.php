@@ -5,43 +5,42 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-
-class KelolaAdminController extends Controller
+class KelolaPembeliController extends Controller
 {
     public function index(){
-        $admin = User::where('role', 'admin')->paginate(1);
-        return view('mykelolaadmin', compact(['admin']));
+        $pembeli =  User::where('role', 'pembeli')->paginate(1);
+        return view('mykelolapembeli', compact(['pembeli']));
     }
     
-
+    public function detail($id){
+        $pembeli = User::find($id);
+        return view('mydetailkelolauser', compact(['pembeli']));
+    }
 
     public function store(Request $request){
-        $data = $request->except('_token');
-        $data['password'] = Hash::make($data['password']);
-        
-
+       $data = $request->except('_token');
+       $data['password'] = Hash::make($data['password']);
     // Handle the profile photo upload
     if ($request->hasFile('profile_photo')) {
         $profilePhotoPath = $request->file('profile_photo')->store('profile_photos', 'public');
         $data['profile_photo'] = $profilePhotoPath;
     }
-   
+    // dd($request);
     // Create the user record with both the profile photo path and other data
      User::create($data);
-         return redirect('/kelolaadmin');
+        return redirect('/kelolapembeli');
     }
 
-
     function destroy($id){
-        $admin = User::find($id);
-        $admin->delete();
-        return redirect('/kelolaadmin');
+        $pembeli = User::find($id);
+        $pembeli->delete();
+        return redirect('/kelolapembeli');
     }
 
     public function update($id, Request $request){
         $data = $request->except('_token');
         $data['password'] = Hash::make($data['password']);
-        $admin = User::find($id);
+        $pembeli = User::find($id);
      // Handle the profile photo upload
      if ($request->hasFile('profile_photo')) {
          $profilePhotoPath = $request->file('profile_photo')->store('profile_photos', 'public');
@@ -49,7 +48,7 @@ class KelolaAdminController extends Controller
      }
      // dd($request);
      // Create the user record with both the profile photo path and other data
-      $admin -> update($data);
-         return redirect('/kelolaadmin');
+      $pembeli -> update($data);
+         return redirect('/kelolapembeli');
      }
 }

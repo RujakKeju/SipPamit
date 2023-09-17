@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\User;
+use App\Models\galeri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class KelolaPeternakController extends Controller
 {
@@ -14,12 +15,13 @@ class KelolaPeternakController extends Controller
     
     public function detail($id){
         $peternak = User::find($id);
-        return view('mydetailkelolauser', compact(['peternak']));
+        $galeri = galeri::where('user_id', $id)->get();
+        return view('mydetailkelolauser', compact(['peternak','galeri']));
     }
 
     public function store(Request $request){
        $data = $request->except('_token');
-
+       $data['password'] = Hash::make($data['password']);
     // Handle the profile photo upload
     if ($request->hasFile('profile_photo')) {
         $profilePhotoPath = $request->file('profile_photo')->store('profile_photos', 'public');
@@ -39,6 +41,7 @@ class KelolaPeternakController extends Controller
 
     public function update($id, Request $request){
         $data = $request->except('_token');
+        $data['password'] = Hash::make($data['password']);
         $peternak = User::find($id);
      // Handle the profile photo upload
      if ($request->hasFile('profile_photo')) {
