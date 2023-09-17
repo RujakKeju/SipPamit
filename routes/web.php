@@ -15,6 +15,7 @@ use App\Http\Controllers\InvestNowController;
 use App\Http\Controllers\KelolaUserController;
 use App\Http\Controllers\KelolaAdminController;
 use App\Http\Controllers\KelolaPeternakController;
+use App\Http\Controllers\KelolaInvestasiController;
 
 
 /*
@@ -112,10 +113,9 @@ Route::get("/myprouser",function (){
 });
 
 
-
-Route::get("/kelolainvest",function (){
-    return view('mykelolainvestasi');
-});
+//Route untuk fitur kelola investasi
+Route::get('/kelolainvest',[KelolaInvestasiController::class, 'index']);
+Route::get('/kelolainvest/{id}',[KelolaInvestasiController::class, 'show'])->name('detailinvestasi');
 
 // Route::get("/kelolaadmin",function (){
 //     return view('mykelolaadmin');
