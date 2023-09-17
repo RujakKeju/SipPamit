@@ -29,12 +29,6 @@ class LoginController extends Controller
                 return redirect()->route('admin');
             }
         }      
-        //     if(auth()->user()->role === 'admin'){
-        //         return redirect()->route('admin');
-        //     } else if (auth()->user()->role === 'pembeli') {
-        //         return redirect()->route('pembeli');
-        //     }
-        // }      
         return redirect()->route('login')->with('loginError', "Login gagal, Username/password salah!");
     }
 
