@@ -6,6 +6,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\galeriController;
 use App\Http\Controllers\InvestController;
 use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\ProductController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InvestNowController;
 use App\Http\Controllers\KelolaUserController;
 use App\Http\Controllers\KelolaAdminController;
+use App\Http\Controllers\KelolaPembeliController;
 use App\Http\Controllers\KelolaPeternakController;
 
 
@@ -73,7 +75,20 @@ Route::put('/detailpeternak/{id}/update', [KelolaPeternakController::class, 'upd
 Route::delete('/kelolapeternak/{id}', [KelolaPeternakController::class, 'destroy']);
 
 //Route Kelola pembeli
-Route::get('/kelolapembeli', [KelolaUserController::class, 'index_pembeli']);
+Route::get('/kelolapembeli', [KelolaPembeliController::class, 'index']);
+
+//Route Kelola pembeli tambah pembeli
+Route::post('/kelolapembeli/store', [KelolaPembeliController::class, 'store']);
+
+
+//Route Detail Kelola pembeli
+Route::get('/detailpembeli/{id}', [KelolaPembeliController::class, 'detail'])->name('detailpembeli');
+
+//Route edit Kelola pembeli
+Route::put('/detailpembeli/{id}/update', [KelolaPembeliController::class, 'update']);
+
+//Route hapus Kelola pembeli
+Route::delete('/kelolapembeli/{id}', [KelolaPembeliController::class, 'destroy']); 
 
 //Route Kelola admin
 Route::get('/kelolaadmin', [KelolaAdminController::class, 'index']);
@@ -90,6 +105,12 @@ Route::put('/kelolaadmin/{id}/update', [KelolaAdminController::class, 'update'])
 //Route Kelola profile
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::post('/profile/update', [ProfileController::class, 'update']);
+
+//Route Kelola galeri tambah gambar
+Route::post('/kelolagaleri/{id}/store', [galeriController::class, 'store']);
+
+//Route hapus Kelola galeri
+Route::delete('/kelolagaleri/{id}/{user_id}', [galeriController::class, 'destroy']);
 
 //Route Registrasi 
 Route::get("/regis",function (){

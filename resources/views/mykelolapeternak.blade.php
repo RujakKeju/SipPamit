@@ -140,12 +140,15 @@
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-primary" value="delete">Delete</button>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editPassword"><i class="material-icons opacity-10">key</i></button>
+                  
                                 </form>
                             </td>
                           </tr>
                           @endforeach
                         </tbody>
                       </table>
+                      @include('modals/modalEditPasswordPeternak')
                       <div class="custom-pagination">
                         <ul class="pagination justify-content-end">
                             @if ($peternak->currentPage() > 1)
