@@ -4,12 +4,13 @@
   <!-- Hero Section Begin -->
   <section class="hero-section">
     <div class="hero-items owl-carousel">
+      @foreach($farmerUser as $peternak)
       <div class="single-hero-items set-bg" data-setbg="img/banner.jpg">
         <div class="container">
           <div class="row">
             <div class="col-lg-5">
               <span>Investasi</span>
-              <h1>Lucky's Farmer</h1>
+              <h1> Peternak {{ $peternak->username }} </h1>
               <p>
                 Whatsupp guys, kembali lagi kepada peternakan ayam saya.
                 tolong investor, saya butuh 30 juta (buat blower hehe)
@@ -37,6 +38,7 @@
           </div>
         </div>
       </div>
+      @endforeach
     </div>
   </section>
   <!-- Hero Section End -->
