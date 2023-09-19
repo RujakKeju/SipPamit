@@ -44,7 +44,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/auth', [LoginController::class, 'authentication']);
 
 Route::get('/home', [PembeliController::class, 'index'])->name('pembeli');
-Route::get('/peternak', [PeternakController::class, 'index'])->name('peternak');
+Route::get('/peternak', [PeternakController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware('is_admin')->name('admin');
 
 Route::get('/logout', [LoginController::class, 'logout']);
@@ -91,7 +91,7 @@ Route::get('/detailpembeli/{id}', [KelolaPembeliController::class, 'detail'])->n
 Route::put('/detailpembeli/{id}/update', [KelolaPembeliController::class, 'update']);
 
 //Route hapus Kelola pembeli
-Route::delete('/kelolapembeli/{id}', [KelolaPembeliController::class, 'destroy']); 
+Route::delete('/kelolapembeli/{id}', [KelolaPembeliController::class, 'destroy']);
 
 //Route Kelola admin
 Route::get('/kelolaadmin', [KelolaAdminController::class, 'index']);
@@ -116,34 +116,34 @@ Route::post('/kelolagaleri/{id}/store', [galeriController::class, 'store']);
 Route::delete('/kelolagaleri/{id}/{user_id}', [galeriController::class, 'destroy']);
 
 //Route Registrasi 
-Route::get("/regis",function (){
+Route::get("/regis", function () {
     return view('myregister');
 });
 
 //Route Login baru
-Route::get("/myaccountlogin",function (){
+Route::get("/myaccountlogin", function () {
     return view('mylogin');
 });
 
 //Route Login baru
-Route::get("/uprof",function (){
+Route::get("/uprof", function () {
     return view('profile-user');
 });
 
 //Route profile pengguna
-Route::get("/myprouser",function (){
+Route::get("/myprouser", function () {
     return view('myprofileuser');
 });
 
 
 //Route untuk fitur kelola investasi
-Route::get('/kelolainvest',[KelolaInvestasiController::class, 'index']);
-Route::get('/kelolainvest/{id}',[KelolaInvestasiController::class, 'show'])->name('detailinvestasi');
+Route::get('/kelolainvest', [KelolaInvestasiController::class, 'index']);
+Route::get('/kelolainvest/{id}', [KelolaInvestasiController::class, 'show'])->name('detailinvestasi');
 
 // Route::get("/kelolaadmin",function (){
 //     return view('mykelolaadmin');
 // });
 
-Route::get("/detailkelolainvestasi",function (){
+Route::get("/detailkelolainvestasi", function () {
     return view('mydetailkelolainvestasi');
 });

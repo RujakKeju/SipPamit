@@ -17,33 +17,34 @@ class LoginController extends Controller
 
         $user = $request->all();
         // dd($user);
-        $this->validate($request,[
+        $this->validate($request, [
             'email' => ['required', 'email:dns'],
             'password' => 'required'
         ]);
 
-        if(Auth::attempt(array('email' => $user['email'], 'password' => $user['password']))) {
+        if (Auth::attempt(array('email' => $user['email'], 'password' => $user['password']))) {
             $request->session()->regenerate();
-            if(auth()->user()->role === 'pembeli'){
+            if (auth()->user()->role === 'pembeli') {
                 return redirect()->route('pembeli');
             } elseif (auth()->user()->role == 'admin') {
                 return redirect()->route('admin');
-            }else {
-                return redirect()->route('peternak');
+            } else {
+                return redirect('/peternak');
             }
-        }      
+        }
         return redirect()->route('login')->with('loginError', "Login gagal, Username/password salah!");
     }
 
-    
-    public function logout(){
+
+    public function logout()
+    {
 
         Auth::logout();
- 
+
         request()->session()->invalidate();
- 
+
         request()->session()->regenerateToken();
- 
+
         return redirect('/login');
     }
 }
