@@ -14,7 +14,8 @@ class PeternakController extends Controller
      */
     public function index()
     {
-        return view('shoppinghome');
+         $farmerUser = User::all();
+        return view('shoppinghome', compact(['farmerUser']));
     }
 
     /**
