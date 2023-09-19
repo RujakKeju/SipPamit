@@ -4,13 +4,13 @@ aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Ganti Password Akun Admin</h5>
+            <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Ganti Password Akun Peternak</h5>
             <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
-            <form action="/kelolaadmin/{{$a -> id}}/update" method="POST" enctype="multipart/form-data">
+            <form action="/detailpeternak/{{$p -> id}}/update" method="POST" enctype="multipart/form-data">
               @method('put') 
               @csrf
                 <div class="row">
