@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\galeri;
+use App\Models\invest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,7 +17,8 @@ class KelolaPeternakController extends Controller
     public function detail($id){
         $peternak = User::find($id);
         $galeri = galeri::where('user_id', $id)->get();
-        return view('mydetailkelolauser', compact(['peternak','galeri']));
+        $investasi = invest::where('user_id', $id)->get();
+        return view('mydetailkelolauser', compact(['peternak','galeri','investasi']));
     }
 
     public function store(Request $request){
