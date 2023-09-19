@@ -16,6 +16,7 @@ class LoginController extends Controller
     {
 
         $user = $request->all();
+        // dd($user);
         $this->validate($request,[
             'email' => ['required', 'email:dns'],
             'password' => 'required'
@@ -25,8 +26,10 @@ class LoginController extends Controller
             $request->session()->regenerate();
             if(auth()->user()->role === 'pembeli'){
                 return redirect()->route('pembeli');
-            } else {
+            } elseif (auth()->user()->role == 'admin') {
                 return redirect()->route('admin');
+            }else {
+                return redirect()->route('peternak');
             }
         }      
         return redirect()->route('login')->with('loginError', "Login gagal, Username/password salah!");

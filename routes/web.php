@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\InvestController;
 use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\PeternakController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
@@ -41,6 +42,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/auth', [LoginController::class, 'authentication']);
 
 Route::get('/home', [PembeliController::class, 'index'])->name('pembeli');
+Route::get('/peternak', [PeternakController::class, 'index'])->name('peternak');
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware('is_admin')->name('admin');
 
 Route::get('/logout', [LoginController::class, 'logout']);
