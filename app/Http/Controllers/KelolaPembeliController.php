@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-use App\Models\galeri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class KelolaPeternakController extends Controller
+class KelolaPembeliController extends Controller
 {
     public function index(){
-        $peternak =  User::where('role', 'peternak')->paginate(1);
-        return view('mykelolapeternak', compact(['peternak']));
+        $pembeli =  User::where('role', 'pembeli')->paginate(1);
+        return view('mykelolapembeli', compact(['pembeli']));
     }
     
     public function detail($id){
-        $peternak = User::find($id);
-        $galeri = galeri::where('user_id', $id)->get();
-        return view('mydetailkelolauser', compact(['peternak','galeri']));
+        $pembeli = User::find($id);
+        return view('mydetailkelolauser', compact(['pembeli']));
     }
 
     public function store(Request $request){
@@ -30,19 +28,19 @@ class KelolaPeternakController extends Controller
     // dd($request);
     // Create the user record with both the profile photo path and other data
      User::create($data);
-        return redirect('/kelolapeternak');
+        return redirect('/kelolapembeli');
     }
 
     function destroy($id){
-        $peternak = User::find($id);
-        $peternak->delete();
-        return redirect('/kelolapeternak');
+        $pembeli = User::find($id);
+        $pembeli->delete();
+        return redirect('/kelolapembeli');
     }
 
     public function update($id, Request $request){
         $data = $request->except('_token');
         $data['password'] = Hash::make($data['password']);
-        $peternak = User::find($id);
+        $pembeli = User::find($id);
      // Handle the profile photo upload
      if ($request->hasFile('profile_photo')) {
          $profilePhotoPath = $request->file('profile_photo')->store('profile_photos', 'public');
@@ -50,7 +48,7 @@ class KelolaPeternakController extends Controller
      }
      // dd($request);
      // Create the user record with both the profile photo path and other data
-      $peternak -> update($data);
-         return redirect('/kelolapeternak');
+      $pembeli -> update($data);
+         return redirect('/kelolapembeli');
      }
 }

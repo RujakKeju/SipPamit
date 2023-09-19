@@ -14,6 +14,7 @@ class LoginController extends Controller
 
     public function authentication(Request $request)
     {
+
         $user = $request->all();
         $this->validate($request,[
             'email' => ['required', 'email:dns'],
@@ -22,13 +23,12 @@ class LoginController extends Controller
 
         if(Auth::attempt(array('email' => $user['email'], 'password' => $user['password']))) {
             $request->session()->regenerate();
-            if(auth()->user()->role === 'admin'){
-                return redirect()->route('admin');
+            if(auth()->user()->role === 'pembeli'){
+                return redirect()->route('pembeli');
             } else {
-                return redirect()-> route('pembeli');
+                return redirect()->route('admin');
             }
-        }
-        
+        }      
         return redirect()->route('login')->with('loginError', "Login gagal, Username/password salah!");
     }
 

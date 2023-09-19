@@ -33,6 +33,7 @@
       </nav>
       <!-- End Navbar -->
 
+<<<<<<< HEAD
       <!-- Modal Tambah Peternak -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -120,6 +121,9 @@
             </div>
         </div>
       <!-- End Modal Tambah Peternak -->
+=======
+      @include('modals/modalEditPeternak')
+>>>>>>> f1b0b60494ab80a4ea3f2819a185b5dec0a800cf
       <!-- Ini Detail Peternak -->
       <div class="container-fluid py-4">
         <div class="card card-frame">
@@ -170,10 +174,14 @@
           <ul class="navbar-nav justify-content-end">
             <li class="nav-item d-flex align-items-center">
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-outline-primary btn-sm mb-0 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+              <button type="button" class="btn btn-outline-primary btn-sm mb-0 me-3" data-bs-toggle="modal" data-bs-target="#addGambarModal">+</button>
+              <button type="button" class="btn btn-outline-primary btn-sm mb-0 me-3" data-bs-toggle="modal" data-bs-target="#listModal">list</button>
+          
             </li>
           </ul>
           <!-- End Button Modal -->
+          @include('modals/tambahGaleri')
+          @include('modals/listGaleri')
         </div>
         <div class="card card-frame">
           <div class="card-body">
@@ -188,7 +196,7 @@
                         <li data-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
                       </ol>
-                      <div class="carousel-inner">
+                      {{-- <div class="carousel-inner">
                         <div class="carousel-item active">
                           <img class="d-block w-100" src="https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg" alt="First slide" />
                         </div>
@@ -197,7 +205,14 @@
                         </div>
                         <div class="carousel-item">
                           <img class="d-block w-100" src="https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-3-min.jpg" alt="Third slide" />
+                        </div> --}}
+                        @foreach ($galeri as $gambar)
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{ asset('storage/' . $gambar->gambar) }}" alt="First slide" />
+                          </div>
                         </div>
+                        @endforeach
                       </div>
                       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
