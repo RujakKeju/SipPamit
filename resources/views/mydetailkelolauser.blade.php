@@ -39,7 +39,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Tambah Akun Peternak</h5>
+                        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Edit Akun Peternak</h5>
                         <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -325,10 +325,10 @@
                         <td>
                           <div class="d-flex px-2 py-1">
                             <div>
-                              <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                              <img src="../assets/img/profile_photo.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                             </div>
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-sm">Ginjal Ayam</h6>
+                              <h6 class="mb-0 text-sm">Daging Ayam</h6>
                             </div>
                           </div>
                         </td>
@@ -354,7 +354,7 @@
                               <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                             </div>
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-sm">Obat Perangsang</h6>
+                              <h6 class="mb-0 text-sm">Obat Demam</h6>
                             </div>
                           </div>
                         </td>
@@ -405,7 +405,7 @@
                 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                   <div class="d-flex justify-content-between align-items-center">
                     <h6 class="text-white text-capitalize ps-3">
-                      DAFTAR BARANG
+                      DAFTAR INVESTASI
                     </h6>
                     <ul class="navbar-nav">
                       <li class="nav-item">
