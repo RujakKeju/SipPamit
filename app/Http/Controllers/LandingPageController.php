@@ -10,11 +10,10 @@ use App\Models\products;
 class LandingPageController extends Controller
 {
     public function index(){
-        $empatProduk = products::take(4)->get();
-
-        $farmerUser = User::where('role', 'peternak')->get();
-
+        $Produk = products::take(4)->get();
+        $farmerUser = User::where('role', 'peternak')->get();  
+        
+        return view('shoppinghome', compact(['farmerUser','Produk']));
     }
-
 
 }
