@@ -9,6 +9,8 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\galeriController;
 use App\Http\Controllers\InvestController;
 use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\PeternakController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
@@ -32,9 +34,7 @@ use App\Http\Controllers\KelolaInvestasiController;
 */
 
 //Route menuju halaman index
-Route::get('/', function () {
-    return view('shoppinghome');
-});
+Route::get('/', [LandingPageController::class, 'index']);
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm'])->name('registerForm');
 Route::post('/register', [UsersController::class, 'register'])->name('registPost');
@@ -142,6 +142,6 @@ Route::get('/kelolainvest/{id}',[KelolaInvestasiController::class, 'show'])->nam
 //     return view('mykelolaadmin');
 // });
 
-Route::get("/detailkelolainvestasi",function (){
-    return view('mydetailkelolainvestasi');
-});
+// Route::get("/detailkelolainvestasi",function (){
+//     return view('mydetailkelolainvestasi');
+// });

@@ -25,8 +25,10 @@ class LoginController extends Controller
             $request->session()->regenerate();
             if(auth()->user()->role === 'pembeli'){
                 return redirect()->route('pembeli');
+            } else if(auth()->user()->role === 'peternak'){
+                return redirect()->route('peternak');
             } else {
-                return redirect()->route('admin');
+                return redirect()->route('pembeli');
             }
         }      
         return redirect()->route('login')->with('loginError', "Login gagal, Username/password salah!");

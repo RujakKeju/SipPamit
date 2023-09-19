@@ -70,4 +70,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(products::class, 'user_id','id');
     }
+    public function invest(): HasMany
+    {
+        return $this->hasMany(products::class, 'user_id','id');
+    }
 }
