@@ -65,7 +65,7 @@
                 <div class="col-lg-6">
                   <div class="product-details">
                     <div class="pd-title">
-                      <h3>Pure Pineapple</h3>
+                      <h3>{{ $product->name }}</h3>
                       <a href="#" class="heart-icon"
                         ><i class="icon_heart_alt"></i
                       ></a>
@@ -79,10 +79,10 @@
                       <span>(5)</span>
                     </div>
                     <div class="pd-desc">
-                      <h4>$495.00 <span>629.99</span></h4>
+                      <h4>{{ $product->price }}</h4>
                     </div>
                     <div class="pd-color">
-                      <!-- <h6>Color</h6> -->
+                      <h6>STOK : {{ $product->stock}}</h6>
                       <!-- <div class="pd-color-choose">
                         <div class="cc-item">
                           <input type="radio" id="cc-black" />
@@ -124,7 +124,7 @@
                     </div>
                     <ul class="pd-tags">
                       <li>
-                        <span>CATEGORIES</span>: More Accessories, Wallets & Cases
+                        <span>KATEGORI</span>: {{ $product->kategori }}
                       </li>
                       <!-- <li><span>TAGS</span>: Clothing, T-shirt, Woman</li> -->
                     </ul>
@@ -159,137 +159,8 @@
                     </li>
                   </ul>
                 </div>
-                <!-- modal deskripsi -->
-              <div
-                class="modal fade"
-                id="editdeskripsiModal"
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="editdeskripsiModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="editdeskripsiModalLabel">
-                        Edit deskripsi
-                      </h5>
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <form id="editdeskripsiForm">
-                        <div class="mb-3">
-                          <label for="perkenalan">Perkenalan</label>
-                          <textarea
-                            class="form-control"
-                            id="perkenalanEdit"
-                            name="perkenalanEdit"
-                          ></textarea>
-                        </div>
-                        <div class="mb-3">
-                          <label for="tentang">tentang</label>
-                          <textarea
-                            class="form-control"
-                            id="tentangEdit"
-                            name="tentangEdit"
-                          ></textarea>
-                        </div>
-                        <div class="mb-3">
-                          <label for="img">Gambar</label>
-                          <input
-                            type="file"
-                            class="form-control-file"
-                            id="imgEdit"
-                            name="imgEdit"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal"
-                      >
-                        Tutup
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        id="simpanEditdeskripsi"
-                      >
-                        Simpan
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                @include('modals/modalEditDetailProduct')
 
-              <!-- end of modal deskripsi-->
-              <!-- modal Spesifikasi -->
-              <div
-                class="modal fade"
-                id="editSpesifikasiModal"
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="editSpesifikasiModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="editSpesifikasiModalLabel">
-                        Edit Spesifikasi
-                      </h5>
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <form id="editSpesifikasiForm">
-                        <div class="mb-3">
-                          <label for="tentang">Spesifikasi</label>
-                          <textarea
-                            class="form-control"
-                            id="spekEdit"
-                            name="spekEdit"
-                          ></textarea>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal"
-                      >
-                        Tutup
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        id="simpanEditSpesifikasi"
-                      >
-                        Simpan
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- end of modal Spesifikasi-->
                 <div class="tab-item-content">
                   <div class="tab-content">
                     <div
@@ -297,6 +168,7 @@
                       id="tab-1"
                       role="tabpanel"
                     >
+                    @auth
                     <!-- Trigger tombol modal -->
                     <a
                       class="btn btn-primary"
@@ -306,16 +178,13 @@
                       ><i class="fas fa-pencil"></i> Edit</a
                     >
                     <!-- end of trigger -->
+                    @endauth
                       <div class="product-content">
                         <div class="row">
                           <div class="col-lg-7">
                             <h5>Deskripsi</h5>
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing
-                              elit, sed do eiusmod tempor incididunt ut labore et
-                              dolore magna aliqua. Ut enim ad minim veniam, quis
-                              nostrud exercitation ullamco laboris nisi ut aliquip
-                              ex ea commodo consequat. Duis aute irure dolor in
+                              {{ $product->deskripsi}}
                             </p>
                             <!-- <h5>Features</h5>
                             <p>
@@ -333,6 +202,7 @@
                       </div>
                     </div>
                     <div class="tab-pane fade" id="tab-2" role="tabpanel">
+                      @auth
                     <!-- Trigger tombol modal -->
                     <a
                       class="btn btn-primary"
@@ -342,62 +212,9 @@
                       ><i class="fas fa-pencil"></i> Edit</a
                     >
                     <!-- end of trigger -->
+                    @endauth
                       <div class="specification-table">
-                        <table>
-                          <tr>
-                            <td class="p-catagory">Customer Rating</td>
-                            <td>
-                              <div class="pd-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
-                                <span>(5)</span>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="p-catagory">Price</td>
-                            <td>
-                              <div class="p-price">$495.00</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="p-catagory">Add To Cart</td>
-                            <td>
-                              <div class="cart-add">+ add to cart</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="p-catagory">Availability</td>
-                            <td>
-                              <div class="p-stock">22 in stock</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="p-catagory">Weight</td>
-                            <td>
-                              <div class="p-weight">1,3kg</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="p-catagory">Size</td>
-                            <td>
-                              <div class="p-size">Xxl</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="p-catagory">Color</td>
-                            <td><span class="cs-color"></span></td>
-                          </tr>
-                          <tr>
-                            <td class="p-catagory">Sku</td>
-                            <td>
-                              <div class="p-code">00012</div>
-                            </td>
-                          </tr>
-                        </table>
+                        {{ $product->spesifikasi}}
                       </div>
                     </div>
                     <div class="tab-pane fade" id="tab-3" role="tabpanel">
@@ -477,7 +294,7 @@
       </section>
       <!-- Product Shop Section End -->
   
-      <!-- Related Products Section End -->
+      <!-- Related product Section End -->
       <div class="related-products spad">
         <div class="container">
           <div class="row">
