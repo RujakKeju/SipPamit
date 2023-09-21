@@ -52,7 +52,19 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/shop', [ShopController::class, 'index']);
 
 //Route Product
+// Rute untuk menampilkan daftar produk atau halaman utama produk
 Route::get('/product', [ProductController::class, 'index']);
+
+// Rute untuk mengedit produk dengan menggunakan metode PUT
+Route::put('/product/{id}', [ProductController::class, 'update'])->middleware('auth');
+
+// Rute untuk menampilkan halaman edit produk
+Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->middleware('auth');
+
+// Rute khusus untuk menampilkan produk dengan ID 1
+Route::get('/product/3', [ProductController::class, 'showProduct2']);
+
+
 
 //Route Invest
 Route::get('/invest', [InvestController::class, 'index']);
