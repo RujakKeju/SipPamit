@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="../assets/css/themify-icons.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/invest.css" type="text/css" />
     <link rel="stylesheet" href="../assets/css/elegant-icons.css" type="text/css" />
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" type="text/css" />
     <link rel="stylesheet" href="../assets/css/nice-select.css" type="text/css" />
