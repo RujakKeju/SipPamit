@@ -224,7 +224,7 @@
                 <ul>
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./shop.html">Shop</a></li>
-                    <li><a href="./invest.html">Investasi</a></li>
+                    <li><a href="/invest">Investasi</a></li>
                     <li>
                         <a href="#">Pages</a>
                         <ul class="dropdown">

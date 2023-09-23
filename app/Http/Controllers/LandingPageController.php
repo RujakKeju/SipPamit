@@ -13,7 +13,7 @@ class LandingPageController extends Controller
     {
         $Produk = products::take(4)->get();
         $farmerUser = User::where('role', 'peternak')->get();
-        dd($farmerUser);
+        // dd($farmerUser);
 
         return view('shoppinghome', compact(['farmerUser', 'Produk']));
     }
