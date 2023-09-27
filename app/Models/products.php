@@ -19,7 +19,10 @@ class products extends Model
         'name',
         'price',
         'stock',
-        'rating'
+        'rating',
+        'kategori',
+        'deskripsi',
+        'spesifikasi',
     ];
 
     protected $casts = [

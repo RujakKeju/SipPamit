@@ -97,7 +97,7 @@
           <div class="card-body">
             <div class="row justify-content-center">
               <div class="col-12 col-sm-10">
-                @foreach($invest as $investasi)
+                @foreach($invests as $invest)
                 <h2 class="text-center">Profil Peternak</h2>
                 <h4 class="text-center mb-3">Kelola Peternak untuk Lorem ipsum dolor sit.</h4>
                 <div class="row">
@@ -105,19 +105,19 @@
                     <div class="card z-index-2">
                       <div class="text-start pt-1">
                         <p class="text-sm mb-0 text-capitalize">Nama Peternakan</p>
-                        <h4 class="mb-0">{{$investasi->user->nama_peternakan}}</h4>
+                        <h4 class="mb-0">{{$invest->farm->nama_peternakan}}</h4>
                       </div>
                       <div class="text-start pt-1">
                         <p class="text-sm mb-0 text-capitalize">Alamat :</p>
-                        <h4 class="mb-0">{{$investasi->user->address}}</h4>
+                        <h4 class="mb-0">{{$invest->farm->user->address}}</h4>
                       </div>
                       <div class="text-start pt-1">
                         <p class="text-sm mb-0 text-capitalize">Pemilik :</p>
-                        <h4 class="mb-0">{{$investasi->user->name}}</h4>
+                        <h4 class="mb-0">{{$invest->farm->user->name}}</h4>
                       </div>
                       <div class="text-start pt-1">
                         <p class="text-sm mb-0 text-capitalize">No HP :</p>
-                        <h4 class="mb-0">{{$investasi->user->contact_phone}}</h4>
+                        <h4 class="mb-0">{{$invest->farm->user->contact_phone}}</h4>
                       </div>
                     </div>
                   </div>
