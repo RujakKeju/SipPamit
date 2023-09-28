@@ -17,7 +17,7 @@ class KelolaPeternakController extends Controller
     public function detail($id){
         $peternak = User::find($id);
         $galeri = galeri::where('user_id', $id)->get();
-        $investasi = invest::where('user_id', $id)->get();
+        $investasi = invest::where('user_id', $id)->paginate(1);
         return view('mydetailkelolauser', compact(['peternak','galeri','investasi']));
     }
 

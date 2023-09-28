@@ -9,17 +9,18 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\galeriController;
 use App\Http\Controllers\InvestController;
 use App\Http\Controllers\PembeliController;
-use App\Http\Controllers\PeternakController;
-use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PeternakController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InvestNowController;
 use App\Http\Controllers\KelolaUserController;
 use App\Http\Controllers\KelolaAdminController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\KelolaPembeliController;
 use App\Http\Controllers\KelolaPeternakController;
 use App\Http\Controllers\KelolaInvestasiController;
+use App\Http\Controllers\kelolaInvestasiPeternakController;
 
 
 /*
@@ -126,6 +127,12 @@ Route::post('/kelolagaleri/{id}/store', [galeriController::class, 'store']);
 
 //Route hapus Kelola galeri
 Route::delete('/kelolagaleri/{id}/{user_id}', [galeriController::class, 'destroy']);
+
+//Route delete investasi detail
+Route::delete('/kelolainvestasi/{user_id}/{id}', [kelolaInvestasiPeternakController::class, 'destroy']);
+
+//Route store investasi
+Route::post('/kelolainvestasi/{id}', [kelolaInvestasiPeternakController::class, 'store']);
 
 //Route Registrasi 
 Route::get("/regis", function () {
