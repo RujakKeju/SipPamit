@@ -127,8 +127,11 @@ Route::post('/kelolagaleri/{id}/store', [galeriController::class, 'store']);
 //Route hapus Kelola galeri
 Route::delete('/kelolagaleri/{id}/{user_id}', [galeriController::class, 'destroy']);
 
-//Route store investasi
+//Route delete investasi detail
 Route::delete('/kelolainvestasi/{user_id}/{id}', [kelolaInvestasiPeternakController::class, 'destroy']);
+
+//Route store investasi
+Route::post('/kelolainvestasi/{id}', [kelolaInvestasiPeternakController::class, 'store']);
 
 //Route Registrasi 
 Route::get("/regis", function () {

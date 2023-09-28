@@ -14,13 +14,13 @@
                   <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                       <label class="form-label">Nama Investasi</label>
-                      <input type="text" class="form-control">
+                      <input type="text" class="form-control" name="">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                       <label class="form-label">Tenggat</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" class="form-control" name="">
                     </div>
                   </div>
                 </div>
@@ -28,13 +28,19 @@
                   <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                       <label class="form-label">Target</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" class="form-control" name="">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                       <label class="form-label">Pembagian Keuntungan</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" class="form-control" name="profit_sharing">
+                    </div>
+                  </div>
+                  <div class="col-md-6" style="display: none">
+                    <div class="input-group input-group-outline my-3">
+                      <label class="form-label">user id</label>
+                      <input type="text" class="form-control" name="user_id" value={{$peternak -> id}}>
                     </div>
                   </div>
                 </div>
