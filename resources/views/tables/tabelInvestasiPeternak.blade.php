@@ -50,22 +50,24 @@
                       <span class="badge badge-sm bg-gradient-success">{{$invest -> profit_sharing}}%</span>
                     </td>
                     <td class="align-middle text-center">
-                      <span class="text-secondary text-xs font-weight-bold">{{$invest -> created_at}}</span>
+                      <span class="text-secondary text-xs font-weight-bold">{{$invest -> period}}</span>
                     </td>
                     <td class="align-middle text-secondary font-weight-bold text-xs">
                       <form action="/kelolainvestasi/{{$invest->user_id}}/{{$invest->id}}" method="POST">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-primary" value="delete">Delete</button>
-                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editPassword"><i class="material-icons opacity-10">key</i></button>
-      
+                        
                     </form>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editInvest"><i class="material-icons opacity-10">edit</i></button>
+                        @include('modals/editInvestasiPeternak')
                     </td>
                     
                   </tr>
                  @endforeach
                 </tbody>
               </table>
+              
                <div class="custom-pagination">
                 <ul class="pagination justify-content-end">
                     @if ($investasi->currentPage() > 1)

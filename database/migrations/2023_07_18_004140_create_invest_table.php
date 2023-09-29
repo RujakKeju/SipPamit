@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable();
             $table->decimal('profit_sharing',3,2)->nullable();
             $table->integer('funding_collected')->default(0);
-            $table->foreignId('farm_id');
-            $table->integer('funding_target');
+            $table->foreignId('farm_id')->nullable();
+            $table->integer('funding_target')->nullable();;
             $table->integer('period')->nullable();
 
             $table->timestamps();

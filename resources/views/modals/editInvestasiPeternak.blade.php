@@ -1,5 +1,5 @@
    <!-- Modal Tambah Peternak -->
-   <div class="modal fade" id="tambahinvestasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal fade" id="editInvest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -9,8 +9,9 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="/kelolainvestasi/store" method="post">
+              <form action="/kelolainvestasi/{{$peternak->id}}/{{$invest->id}}/update" method="post">
                 @csrf
+                @method('put')
                 <div class="row">
                   <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">

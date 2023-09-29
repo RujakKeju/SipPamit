@@ -130,8 +130,11 @@ Route::delete('/kelolagaleri/{id}/{user_id}', [galeriController::class, 'destroy
 //Route delete investasi detail
 Route::delete('/kelolainvestasi/{user_id}/{id}', [kelolaInvestasiPeternakController::class, 'destroy']);
 
+//Route edit investasi detail
+Route::put('/kelolainvestasi/{user_id}/{id}/update', [kelolaInvestasiPeternakController::class, 'update']);
+
 //Route store investasi
-Route::post('/kelolainvestasi/{id}', [kelolaInvestasiPeternakController::class, 'store']);
+Route::post('/kelolainvestasi/store', [kelolaInvestasiPeternakController::class, 'store']);
 
 //Route Registrasi 
 Route::get("/regis", function () {
