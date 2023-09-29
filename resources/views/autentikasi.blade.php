@@ -172,16 +172,16 @@
               <form  action="/auth" method="post">
                 @csrf
                 <div class="group-input">
-                  <label for="username">Email</label>
-                  <input type="email" class="input" name="email" placeholder="email" required />
-                  @error('email')
+                  <label for="username">Username</label>
+                  <input type="text" class="input" name="username" placeholder="username" required />
+                  @error('username')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
                   @enderror
                 </div>
                 <div class="group-input">
-                 <label for="pass">Password</label>
+                 <label for="password">Password</label>
                  <input type="text" class="input is-invalid" name="password" placeholder="password" required>
                  <!-- {{-- <input type="password" id="pass" placeholder="Masukan Password Anda" /> --}} -->
                 </div>
