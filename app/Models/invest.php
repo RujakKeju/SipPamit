@@ -17,10 +17,12 @@ class invest extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'deskripsi',
         'profit_sharing',
         'funding_target',
         'period',
         'farm_id',
+        'user_id'
     ];
 
     protected $guards = [
