@@ -57,14 +57,15 @@ Route::get('/shop', [ShopController::class, 'index']);
 Route::get('/product', [ProductController::class, 'index']);
 
 // Rute untuk mengedit produk dengan menggunakan metode PUT
-Route::put('/product/{id}', [ProductController::class, 'update'])->middleware('auth');
+Route::put('/product/{id}', [ProductController::class, 'update_product'])->middleware('auth');
 
 // Rute untuk menampilkan halaman edit produk
-Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->middleware('auth');
+Route::get('/product/{id}', [ProductController::class, 'edit'])->middleware('auth');
 
-// Rute khusus untuk menampilkan produk dengan ID 1
-Route::get('/product/3', [ProductController::class, 'showProduct2']);
-
+//Mencoba saja
+// Rute khusus untuk menampilkan produk dengan ID 1 
+Route::get('/product/1', [ProductController::class, 'showProduct2']);
+//masih area produk ------------------------------------------------------
 
 
 //Route Invest
