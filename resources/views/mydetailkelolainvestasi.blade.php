@@ -97,7 +97,6 @@
           <div class="card-body">
             <div class="row justify-content-center">
               <div class="col-12 col-sm-10">
-                @foreach($invests as $invest)
                 <h2 class="text-center">Profil Peternak</h2>
                 <h4 class="text-center mb-3">Kelola Peternak untuk Lorem ipsum dolor sit.</h4>
                 <div class="row">
@@ -129,7 +128,6 @@
                     </div>
                   </div>
                 </div>
-                @endforeach
               </div>
             </div>
           </div>

@@ -27,8 +27,8 @@ class KelolaInvestasiController extends Controller
      */
     public function show($id)
     {
-        $invests = invest::find($id);
-        dd($invests);
-        return view('mydetailkelolainvestasi', compact(['invests']));
+        $invest = invest::find($id);
+        // dd($invests);
+        return view('mydetailkelolainvestasi', compact(['invest']));
     }
 }

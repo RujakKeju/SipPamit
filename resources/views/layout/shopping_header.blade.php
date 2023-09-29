@@ -198,7 +198,7 @@
                     <!-- Tambahkan informasi pengguna lainnya di sini -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger mx-auto" id="logout-button">Logout</button>
+                    <a href="/logout" type="button" class="btn btn-danger mx-auto" id="logout-button">Logout</a>
                 </div>
             </div>
         </div>
