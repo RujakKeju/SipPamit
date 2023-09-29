@@ -22,6 +22,7 @@ class invest extends Model
         'funding_target',
         'period',
         'farm_id',
+        'user_id'
     ];
 
     protected $guards = [
