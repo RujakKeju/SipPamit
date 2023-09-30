@@ -18,11 +18,11 @@ class LoginController extends Controller
         $user = $request->all();
         // dd($user);
         $this->validate($request, [
-            'email' => ['required', 'email:dns'],
+            'username' => 'required',
             'password' => 'required'
         ]);
 
-        if (Auth::attempt(array('email' => $user['email'], 'password' => $user['password']))) {
+        if (Auth::attempt(array('username' => $user['username'], 'password' => $user['password']))) {
             $request->session()->regenerate();
             if (auth()->user()->role === 'pembeli') {
                 return redirect()->route('pembeli');
